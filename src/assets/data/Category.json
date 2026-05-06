@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "nama": "Kopi Gayo Aceh",
+      "harga": 75000,
+      "detail": "Kopi arabica dengan rasa dark chocolate, spicy, dan nutty.",
+      "category": "Arabica",
+      "image": "/src/assets/Include/Product/ArabicaGayo.jpg"
+    },
+    {
+      "id": 2,
+      "nama": "Kopi Toraja",
+      "harga": 80000,
+      "detail": "Memiliki body yang kuat dengan aftertaste earthy dan sedikit fruity.",
+      "category": "Arabica",
+      "image": "/src/assets/Include/Product/toraja.svg"
+    },
+    {
+      "id": 3,
+      "nama": "Kopi Kintamani Bali",
+      "harga": 70000,
+      "detail": "Cita rasa segar dengan hint citrus dan floral.",
+      "category": "Arabica",
+      "image": "/src/assets/Include/Product/kintamani.svg"
+    },
+    {
+      "id": 4,
+      "nama": "Kopi Robusta Lampung",
+      "harga": 50000,
+      "detail": "Rasa kuat, pahit, dengan crema yang tebal.",
+      "category": "Robusta",
+      "image": "/src/assets/Include/Product/lampung.svg"
+    },
+    {
+      "id": 5,
+      "nama": "Kopi Flores Bajawa",
+      "harga": 78000,
+      "detail": "Rasa seimbang dengan aroma cokelat dan sedikit manis.",
+      "category": "Arabica",
+      "image": "/src/assets/Include/Product/flores.svg"
+    }
+  ]
+}

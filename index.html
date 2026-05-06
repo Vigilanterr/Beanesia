@@ -6,7 +6,7 @@
     <title>Beanesia - Homepage</title>
     <link rel="stylesheet" href="/src/output.css">
     <link rel="shortcut icon" href="/src/assets/Include/Picture/WebLogo.svg" type="image/x-icon">
-    
+
     <!-- HILANGKAN SCROLLBARRR WOIII GANGGU BANGETT -->
     <style> 
     html {
@@ -22,5 +22,24 @@
     </main>
     
 <script src="/src/dist/include.js"></script>
+
+<!-- MAMPUS GAK BISA RESPONSIVE2 AN AWOKAWOK -->
+<script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === "F12") {
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) {
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.key === 'U') {
+        e.preventDefault();
+    }
+});
+
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+</script>
 </body>
 </html>
