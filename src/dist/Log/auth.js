@@ -3,7 +3,7 @@ async function login() {
   const password = document.getElementById("password").value;
 
   try {
-    let response = await fetch("/src/dist/Log/user.json");
+    let response = await fetch("/src/dist/user.json");
     let users = await response.json();
 
     let user = users.find(u => u.email === email && u.password === password);
