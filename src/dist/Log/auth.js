@@ -11,7 +11,9 @@ async function login() {
     if (user) {
       sessionStorage.setItem("user", JSON.stringify(user));
       alert("Login berhasil!");
-      window.location.href = "/src/pages/home.html"; // diubah
+      console.log("berhasil");
+      
+      window.location.href = "/src/pages/home.html";
     } else {
       alert("Email atau password salah!");
     }
@@ -23,16 +25,16 @@ async function login() {
 
 function checkLogin() {
   const user = sessionStorage.getItem("user");
-  if (user) {
-    window.location.href = "/src/pages/home.html";
+  const sudahLogin = window.location.pathname.includes("Login.html");
+
+  if (!user && !sudahLogin) {
+    window.location.href = "/src/pages/Login.html";
   }
 }
 
 function logout() {
   sessionStorage.removeItem("user");
   window.location.href = "/src/pages/Login.html";
-  console.log("test");
 }
 
 checkLogin();
-
