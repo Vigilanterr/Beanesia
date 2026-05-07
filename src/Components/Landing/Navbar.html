@@ -1,56 +1,76 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beanesia Navbar - Tailwind CSS</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
-        body { font-family: 'Montserrat', sans-serif; }
-    </style>
-</head>
-<body class="bg-[#1a1a1a]">
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-[#050505] px-[50px] h-[90px] border-b border-[#1a1a1a]">
 
-    <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-[#050505] px-[50px] h-[90px] border-b border-[#1a1a1a]">
-        
-        <a href="#" class="block">
-            <img src="/src/assets/Include/NavIcon/MainLogo.svg" alt="Beanesia Logo" class="h-[60px] object-contain">
-        </a>
+    <a href="#" class="block">
+        <img src="/src/assets/Include/NavIcon/MainLogo.svg" 
+        alt="Beanesia Logo" 
+        class="h-[60px] object-contain">
+    </a>
 
-        <div class="flex items-center bg-white rounded-full px-5 w-[450px] h-[45px]">
-            <img src="/src/assets/Include/NavIcon/Search.svg" alt="Search Icon" class="h-5 w-5 mr-3 opacity-60">
-            <input type="text" placeholder="Search" class="outline-none bg-transparent text-base w-full text-[#333] placeholder-[#999] font-medium">
+    <div class="flex items-center bg-white rounded-full px-5 w-[450px] h-[45px]">
+        <iconify-icon
+            icon="material-symbols:search-rounded"
+            width="24"
+            height="24"
+            class="text-gray-500 mr-3">
+        </iconify-icon>
+
+        <input
+            type="text"
+            placeholder="Search"
+            class="outline-none bg-transparent text-base w-full text-[#333] placeholder-[#999] font-medium">
+    </div>
+
+    <div class="flex items-center gap-[35px]">
+
+        <ul class="flex gap-10">
+            <li>
+                <a href="index.html" 
+                class="text-white pb-1 border-b-2 border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all duration-200">
+                    Beranda
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#products" 
+                class="text-white pb-1 border-b-2 border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all duration-200">
+                    Product
+                </a>
+            </li>
+
+            <li>
+                <a href="#" 
+                class="text-white pb-1 border-b-2 border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all duration-200">
+                    Contact
+                </a>
+            </li>
+        </ul>
+
+        <div class="w-px h-[35px] bg-white/40"></div>
+
+        <div class="flex items-center gap-[25px]">
+
+            <a href="#" class="group">
+                <iconify-icon
+                    icon="mdi:cart-outline"
+                    width="30"
+                    height="30"
+                    class="text-white transition duration-200 group-hover:scale-110">
+                </iconify-icon>
+            </a>
+
+            <a href="/src/pages/Login.html" class="flex items-center gap-3 text-white font-medium text-base group">
+                <span>Login</span>
+
+                <iconify-icon
+                    icon="mdi:account-circle-outline"
+                    width="42"
+                    height="42"
+                    class="text-white transition duration-200 group-hover:scale-105">
+                </iconify-icon>
+            </a>
+
         </div>
 
-        <div class="flex items-center gap-[35px]">
-            
-            <ul class="flex gap-10">
-                <li>
-                    <a href="#" class="text-[#D4AF37] border-b-2 border-[#D4AF37] pb-1 text-base font-medium transition-colors duration-300">Beranda</a>
-                </li>
-                <li>
-                    <a href="#" class="text-white hover:text-[#D4AF37] font-medium transition-colors duration-300">Product</a>
-                </li>
-                <li>
-                    <a href="#" class="text-white hover:text-[#D4AF37] text-base font-medium transition-colors duration-300">Contact</a>
-                </li>
-            </ul>
+    </div>
 
-            <div class="w-px h-[35px] bg-white/40"></div>
-
-            <div class="flex items-center gap-[25px]">
-                <a href="#" class="group">
-                    <img src="/src/assets/Include/NavIcon/Cart.svg" alt="Cart Icon" class="h-[28px] w-auto transition-transform duration-200 group-hover:scale-110">
-                </a>
-                
-                <a href="/src/pages/Login.html" class="flex items-center gap-3 text-white font-medium text-base group">
-                    <span>Login</span>
-                    <img src="/src/assets/Include/NavIcon/Profile.svg" alt="Profile Icon" class="h-[40px] w-[40px] ml-2 rounded-full object-cover transition-transform duration-200 group-hover:scale-105">
-                </a>
-            </div>
-
-        </div>
-    </nav>
-<script src="/src/dist/callPict.js"></script>
-</body>
-</html>
+</nav>

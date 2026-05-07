@@ -39,7 +39,7 @@ async function getProducts() {
 
             <div class="mt-auto">
               <a 
-                href="/src/pages/login.html"
+                href="/src/pages/detail.html?id=${p.id}"
                 class="flex items-center justify-center gap-2 w-full text-xs font-black text-black bg-[#D4AF37] px-4 py-3 rounded-lg hover:bg-[#b8972e] transition-all uppercase tracking-widest"
               >
                 Beli Sekarang
