@@ -8,11 +8,12 @@ async function getProducts() {
 
     products.forEach(p => {
       const div = document.createElement("div");
+      div.className = "h-full";
 
       div.innerHTML = `
-        <div class="bg-[#121212] border border-[#2a2a2a] max-w-sm rounded-xl shadow-md hover:shadow-2xl hover:border-[#D4AF37] transition duration-300 overflow-hidden m-4 group">
+        <div class="bg-[#121212] border border-[#2a2a2a] rounded-xl shadow-md hover:shadow-2xl hover:border-[#D4AF37] transition duration-300 overflow-hidden group flex flex-col h-full">
           
-          <div class="relative overflow-hidden">
+          <div class="relative overflow-hidden shrink-0">
             <img 
               src="${p.image}" 
               alt="${p.nama}" 
@@ -23,7 +24,7 @@ async function getProducts() {
             </div>
           </div>
 
-          <div class="p-6 flex flex-col h-full">
+          <div class="p-6 flex flex-col flex-grow">
             <div class="flex justify-between items-start mb-2 gap-2">
               <h5 class="text-xl font-bold text-white tracking-tight leading-tight">
                 ${p.nama}
@@ -33,19 +34,21 @@ async function getProducts() {
               </span>
             </div>
 
-            <p class="text-sm text-gray-400 mb-6 line-clamp-2 leading-relaxed">
+            <p class="text-sm text-gray-400 mb-6 line-clamp-3 leading-relaxed">
               ${p.detail}
             </p>
 
-            <a 
-              href="/src/pages/login.html"
-              class="flex items-center justify-center gap-2 w-full text-xs font-black text-black bg-[#D4AF37] px-4 py-3 rounded-lg hover:bg-[#b8972e] transition-all uppercase tracking-widest"
-            >
-              Beli Sekarang
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-              </svg>
-            </a>
+            <div class="mt-auto">
+              <a 
+                href="/src/pages/login.html"
+                class="flex items-center justify-center gap-2 w-full text-xs font-black text-black bg-[#D4AF37] px-4 py-3 rounded-lg hover:bg-[#b8972e] transition-all uppercase tracking-widest"
+              >
+                Beli Sekarang
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       `;
