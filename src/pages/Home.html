@@ -4,13 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Home</title>
+    <link rel="stylesheet" href="/src/output.css">
+    <link rel="shortcut icon" href="/src/assets/Include/Picture/WebLogo.svg" type="image/x-icon">
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
 </head>
+    <style> 
+    html {
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    }
+    </style>
 <body>
 
-    <div id="products"></div>
+    <div id="navbar-container"></div>
+
+    <main class="p-20 font-bold mt-2 text-center">
+    <div id="products" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-5">
+    </div>
+    </main>
+    
     <button
     onclick="logout()">Keluar</button>
-    <script src="/src/dist/Main/HomePages.js"></script>
-    <script src="/src/dist/Log/auth.js"></script>
+
+    <div id="Footer"></div>
+
+
+    <script src="/src/dist/Main/HomeCategory.js"></script>
+    <script src="/src//dist/Main/HomePages.js"></script>
+
 </body>
 </html>

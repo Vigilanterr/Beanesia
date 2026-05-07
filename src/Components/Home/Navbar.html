@@ -1,0 +1,76 @@
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-[#050505] px-[50px] h-[90px] border-b border-[#1a1a1a]">
+
+    <a href="#" class="block">
+        <img src="/src/assets/Include/NavIcon/MainLogo.svg" 
+        alt="Beanesia Logo" 
+        class="h-[60px] object-contain">
+    </a>
+
+    <div class="flex items-center bg-white rounded-full px-5 w-[450px] h-[45px]">
+        <iconify-icon
+            icon="material-symbols:search-rounded"
+            width="24"
+            height="24"
+            class="text-gray-500 mr-3">
+        </iconify-icon>
+
+        <input
+            type="text"
+            placeholder="Search"
+            class="outline-none bg-transparent text-base w-full text-[#333] placeholder-[#999] font-medium">
+    </div>
+
+    <div class="flex items-center gap-[35px]">
+
+        <ul class="flex gap-10">
+            <li>
+                <a href="/src/pages/Home.html#" 
+                class="text-white pb-1 border-b-2 border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all duration-200">
+                    Beranda
+                </a>
+            </li>
+
+            <li>
+                <a href="/src/pages/Home.html#products" 
+                class="text-white pb-1 border-b-2 border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all duration-200">
+                    Product
+                </a>
+            </li>
+
+            <li>
+                <a href="#" 
+                class="text-white pb-1 border-b-2 border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all duration-200">
+                    Contact
+                </a>
+            </li>
+        </ul>
+
+        <div class="w-px h-[35px] bg-white/40"></div>
+
+        <div class="flex items-center gap-[25px]">
+
+            <a href="#" class="group">
+                <iconify-icon
+                    icon="mdi:cart-outline"
+                    width="30"
+                    height="30"
+                    class="text-white transition duration-200 group-hover:scale-110">
+                </iconify-icon>
+            </a>
+
+            <a href="/src/pages/Profile.html" class="flex items-center gap-3 text-white font-medium text-base group">
+                <span>Pengguna</span>
+
+                <iconify-icon
+                    icon="mdi:account-circle-outline"
+                    width="42"
+                    height="42"
+                    class="text-white transition duration-200 group-hover:scale-105">
+                </iconify-icon>
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
