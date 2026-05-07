@@ -9,7 +9,6 @@ async function getProducts() {
     products.forEach(p => {
       const div = document.createElement("div");
       div.className = "h-full";
-
       div.innerHTML = `
         <div class="bg-[#121212] border border-[#2a2a2a] rounded-xl shadow-md hover:shadow-2xl hover:border-[#D4AF37] transition duration-300 overflow-hidden group flex flex-col h-full">
           
@@ -24,7 +23,7 @@ async function getProducts() {
             </div>
           </div>
 
-          <div class="p-6 flex flex-col flex-grow">
+          <div class="p-6 flex flex-col grow">
             <div class="flex justify-between items-start mb-2 gap-2">
               <h5 class="text-xl font-bold text-white tracking-tight leading-tight">
                 ${p.nama}
