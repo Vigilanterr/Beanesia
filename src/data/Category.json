@@ -39,6 +39,30 @@
       "detail": "Rasa seimbang dengan aroma cokelat dan sedikit manis.",
       "category": "Arabica",
       "image": "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=400"
+    },
+    {
+      "id": 6,
+      "nama": "Kopi Java Preanger",
+      "harga": 82000,
+      "detail": "Rasa kompleks dengan kombinasi fruity, floral, dan sedikit karamel.",
+      "category": "Arabica",
+      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400"
+    },
+    {
+      "id": 7,
+      "nama": "Kopi Wamena Papua",
+      "harga": 90000,
+      "detail": "Rasa ringan dengan keasaman rendah dan aroma manis alami.",
+      "category": "Arabica",
+      "image": "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=400"
+    },
+    {
+      "id": 8,
+      "nama": "Kopi Temanggung",
+      "harga": 65000,
+      "detail": "Memiliki karakter smoky dengan sentuhan rasa tembakau yang khas.",
+      "category": "Robusta",
+      "image": "https://direktori.tanilink.com/uploads/produk/kopi-arabika-temanggung_1764212646_1787.jpg?w=400"
     }
   ]
 }
