@@ -1,4 +1,4 @@
-# ☕ BEANESIA - Mahakarya Kopi Nusantara
+# ☕ BEANESIA 
 
 **Beanesia** adalah platform e-commerce premium berbasis web yang didedikasikan untuk mendistribusikan biji kopi pilihan terbaik dari berbagai pelosok Nusantara. Proyek ini mengusung antarmuka UI/UX yang modern, elegan (Dark Mode & Gold accent), serta interaktif.
 
