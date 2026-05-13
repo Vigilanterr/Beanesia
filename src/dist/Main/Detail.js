@@ -3,7 +3,7 @@ async function detailProduct() {
     const params = new URLSearchParams(window.location.search);
     const productId = parseInt(params.get("id"));
 
-    const response = await ("/src/data/Category.json");
+    const response = await fetch("/src/data/Category.json");
     const data = await response.json();
     const products = data.products;
 
@@ -42,26 +42,39 @@ async function detailProduct() {
             
             <p class="text-gray-400 text-lg leading-relaxed mb-10 text-justify">${currentProduct.detail}</p>
             
-            <div class="flex flex-col sm:flex-row gap-4 items-center">
+                <div class="flex flex-col sm:flex-row gap-4 items-center">
                 <div class="flex items-center border border-white/10 rounded-xl bg-[#121212] overflow-hidden h-14 w-full sm:w-32 shrink-0">
-                    <button class="px-4 text-gray-400 hover:text-white hover:bg-white/5 transition-colors h-full flex items-center justify-center">-</button>
-                    <input type="text" value="1" class="w-full text-center bg-transparent text-white font-semibold focus:outline-none" readonly>
-                    <button class="px-4 text-gray-400 hover:text-white hover:bg-white/5 transition-colors h-full flex items-center justify-center">+</button>
+                    <button id="kurang" class="px-4 text-gray-400 hover:text-white hover:bg-white/5 transition-colors h-full flex items-center justify-center">-</button>
+                    <input id="input" type="text" value="1" class="w-full text-center bg-transparent text-white font-semibold focus:outline-none" readonly>
+                    <button id="tambah" class="px-4 text-gray-400 hover:text-white hover:bg-white/5 transition-colors h-full flex items-center justify-center">+</button>
                 </div>
                 
                 <button class="flex-1 flex items-center justify-center gap-3 w-full h-14 bg-[#D4AF37] text-black rounded-xl font-bold uppercase tracking-wider hover:bg-[#C5A028] transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.15)] hover:shadow-[0_0_30px_rgba(212,175,55,0.3)] hover:-translate-y-1">
-                    <iconify-icon
-                    icon="mdi:cart-outline"
-                    width="25"
-                    height="25"
-                    class="text-black mr transition duration-200 group-hover:scale-110">
-                </iconify-icon>
                   Tambah ke Keranjang
                 </button>
             </div>
         </div>
       </div>
+      
     `;
+const add = document.getElementById("tambah");
+const remove = document.getElementById("kurang");
+const inputJumlah = document.getElementById("input");
+
+add.addEventListener("click", function () {
+  let jumlahAwal = parseInt(inputJumlah.value);
+  inputJumlah.value = jumlahAwal + 1;
+});
+
+remove.addEventListener("click", function () {
+  let jumlahAwal = parseInt(inputJumlah.value);
+
+  if (jumlahAwal > 1) {
+    inputJumlah.value = jumlahAwal - 1;
+  } else {
+    alert("Jumlah pemesanan minimal 1 ")
+  }
+});
 
     const relatedProducts = products.filter(p => p.category === currentProduct.category && p.id !== productId);
     const relatedContainer = document.getElementById("related-products");
