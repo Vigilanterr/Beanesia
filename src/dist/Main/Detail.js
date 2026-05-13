@@ -3,7 +3,7 @@ async function detailProduct() {
     const params = new URLSearchParams(window.location.search);
     const productId = parseInt(params.get("id"));
 
-    const response = await fetch("/src/data/Category.json");
+    const response = await ("/src/data/Category.json");
     const data = await response.json();
     const products = data.products;
 
