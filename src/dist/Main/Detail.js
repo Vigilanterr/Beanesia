@@ -48,8 +48,9 @@ async function detailProduct() {
                     <input id="input" type="text" value="1" class="w-full text-center bg-transparent text-white font-semibold focus:outline-none" readonly>
                     <button id="tambah" class="px-4 text-gray-400 hover:text-white hover:bg-white/5 transition-colors h-full flex items-center justify-center">+</button>
                 </div>
-                
-                <button class="flex-1 flex items-center justify-center gap-3 w-full h-14 bg-[#D4AF37] text-black rounded-xl font-bold uppercase tracking-wider hover:bg-[#C5A028] transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.15)] hover:shadow-[0_0_30px_rgba(212,175,55,0.3)] hover:-translate-y-1">
+          
+                <button id="add-to-cart"
+                class="flex-1 flex items-center justify-center gap-3 w-full h-14 bg-[#D4AF37] text-black rounded-xl font-bold uppercase tracking-wider hover:bg-[#C5A028] transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.15)] hover:shadow-[0_0_30px_rgba(212,175,55,0.3)] hover:-translate-y-1">
                   Tambah ke Keranjang
                 </button>
             </div>
@@ -74,6 +75,31 @@ remove.addEventListener("click", function () {
   } else {
     alert("Jumlah pemesanan minimal 1 ")
   }
+});
+
+const btnCart = document.getElementById("add-to-cart");
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+btnCart.addEventListener("click", function () {
+  let qty = parseInt(inputJumlah.value);
+
+  let existing = cart.find(item => item.id === currentProduct.id);
+
+  if (existing) {
+    existing.qty += qty;
+  } else {
+    cart.push({
+      id: currentProduct.id,
+      title: currentProduct.nama,
+      price: currentProduct.harga,
+      image: currentProduct.image,
+      qty: qty
+    });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  alert("Produk berhasil ditambahkan ke keranjang 🛒");
 });
 
     const relatedProducts = products.filter(p => p.category === currentProduct.category && p.id !== productId);

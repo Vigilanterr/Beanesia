@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/src/output.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Keranjang</title>
+  <link rel="stylesheet" href="/src/output.css">
 </head>
 <body>
-    <h1 class="font-bold text-center mt-52">INI KERANJANG WOI</h1>
-</body>
-</html>
+<section class="container mx-auto p-6">
+  <h1 class="text-3xl font-bold mb-6">Keranjang</h1>
+
+  <div id="cart-items"></div>
+
+  <div class="mt-6">
+    <h2 id="cart-total" class="text-xl font-bold"></h2>
+  </div>
+</section>
+
+<script src="/src/dist/Main/cart.js"></script>
