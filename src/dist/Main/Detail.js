@@ -76,7 +76,6 @@ remove.addEventListener("click", function () {
     alert("Jumlah pemesanan minimal 1 ")
   }
 });
-
 const btnCart = document.getElementById("add-to-cart");
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -99,7 +98,9 @@ btnCart.addEventListener("click", function () {
 
   localStorage.setItem("cart", JSON.stringify(cart));
 
-  alert("Produk berhasil ditambahkan ke keranjang 🛒");
+  alert("Berhasil ditambahkan ke keranjang");
+
+  
 });
 
     const relatedProducts = products.filter(p => p.category === currentProduct.category && p.id !== productId);

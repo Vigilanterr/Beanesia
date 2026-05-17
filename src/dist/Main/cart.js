@@ -64,10 +64,6 @@ function renderCart() {
         <button onclick="removeFromCart(${item.id})"
           class="text-red-500 font-bold">X</button>
       </div>
-      <button 
-      class="px-2 bg-amber-400 rounded font-bold w-20 "
-      onclick="alert('berhasil memesan')"
-      >Pesan</button>
     `;
   });
 

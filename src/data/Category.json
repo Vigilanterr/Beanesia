@@ -7,7 +7,8 @@
       "detail": "Kopi arabica dengan rasa dark chocolate, spicy, dan nutty.",
       "category": "Arabica",
       "ukuran": "500gr",
-      "image": "https://images.unsplash.com/photo-1610889556528-9a770e32642f?w=400"
+      "image": "https://images.unsplash.com/photo-1610889556528-9a770e32642f?w=400",
+      "sold": 420
     },
     {
       "id": 2,
@@ -16,7 +17,8 @@
       "detail": "Memiliki body yang kuat dengan aftertaste earthy dan sedikit fruity.",
       "category": "Arabica",
       "ukuran": "500gr",
-      "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400"
+      "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400",
+      "sold": 350
     },
     {
       "id": 3,
@@ -25,7 +27,8 @@
       "detail": "Cita rasa segar dengan hint citrus dan floral.",
       "category": "Arabica",
       "ukuran": "500gr",
-      "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400"
+      "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400",
+      "sold": 275
     },
     {
       "id": 4,
@@ -34,7 +37,8 @@
       "detail": "Rasa kuat, pahit, dengan crema yang tebal.",
       "category": "Robusta",
       "ukuran": "500gr",
-      "image": "https://images.unsplash.com/photo-1509785307050-d4066910ec1e?w=400"
+      "image": "https://images.unsplash.com/photo-1509785307050-d4066910ec1e?w=400",
+      "sold": 180
     },
     {
       "id": 5,
@@ -43,7 +47,8 @@
       "detail": "Rasa seimbang dengan aroma cokelat dan sedikit manis.",
       "category": "Arabica",
       "ukuran": "500gr",
-      "image": "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=400"
+      "image": "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=400",
+      "sold": 310
     },
     {
       "id": 6,
@@ -52,7 +57,8 @@
       "detail": "Rasa kompleks dengan kombinasi fruity, floral, dan sedikit karamel.",
       "category": "Arabica",
       "ukuran": "500gr",
-      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400"
+      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400",
+      "sold": 340
     },
     {
       "id": 7,
@@ -61,7 +67,8 @@
       "detail": "Rasa ringan dengan keasaman rendah dan aroma manis alami.",
       "category": "Arabica",
       "ukuran": "500gr",
-      "image": "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=400"
+      "image": "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=400",
+      "sold": 220
     },
     {
       "id": 8,
@@ -70,7 +77,8 @@
       "detail": "Memiliki karakter smoky dengan sentuhan rasa tembakau yang khas.",
       "category": "Robusta",
       "ukuran": "500gr",
-      "image": "https://direktori.tanilink.com/uploads/produk/kopi-arabika-temanggung_1764212646_1787.jpg?w=400"
+      "image": "https://direktori.tanilink.com/uploads/produk/kopi-arabika-temanggung_1764212646_1787.jpg?w=400",
+      "sold": 150
     }
   ]
 }
