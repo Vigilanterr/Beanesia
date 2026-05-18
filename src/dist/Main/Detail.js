@@ -116,7 +116,7 @@ btnCart.addEventListener("click", function () {
 
     relatedContainer.innerHTML = relatedProducts.map(p => `
       <div class="group bg-[#121212] border border-white/5 rounded-2xl p-4 transition-all duration-300 hover:border-[#D4AF37]/40 hover:bg-[#1a1a1a] flex flex-col h-full cursor-pointer" onclick="window.location.href='detail.html?id=${p.id}'">
-        <div class="relative overflow-hidden rounded-xl mb-5 aspect-[4/3]">
+        <div class="relative overflow-hidden rounded-xl mb-5 aspect-4/3">
           <img src="${p.image}" alt="${p.nama}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
           <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300"></div>
           <span class="absolute top-3 left-3 bg-[#121212]/80 backdrop-blur-sm border border-white/10 text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider">
