@@ -8,5 +8,10 @@
         "email": "user@gmail.com",
         "password": "12345",
         "name": "User Biasa"
-    }   
+    },
+    {
+        "email": "ersyacantik@gmail.com",
+        "password": "12345",
+        "name": "User Biasa"
+    }
 ]

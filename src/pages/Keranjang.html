@@ -4,20 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Halaman Keranjang</title>
+  <link rel="shortcut icon" href="/src/assets/Include/Picture/WebLogo.svg" type="image/x-icon">
   <link rel="stylesheet" href="/src/output.css">
 </head>
 <body>        
 <section class="container mx-auto p-6 ">
   <h1 class="text-3xl font-bold mb-6">Keranjang</h1>
-
   <div id="cart-items"></div>
       <button 
       class="px-2 bg-amber-400 rounded font-bold w-20 "
       onclick="alert('berhasil memesan')"
       >Pesan</button>
   <div class="mt-6">
-    <h2 id="cart-total" class="text-xl font-bold"></h2>
+    <!-- <h2 id="cart-total" class="text-xl font-bold"></h2> -->
+     <h1>Total Harga : <span id="totalHarga"></span></h1>
   </div>
 </section>
 
 <script src="/src/dist/Main/cart.js"></script>
+
+<button

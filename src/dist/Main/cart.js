@@ -33,7 +33,7 @@ function renderCart() {
   let total = 0;
 
   if (cart.length === 0) {
-    container.innerHTML = "<p>Keranjang kosong 🛒</p>";
+    container.innerHTML = "<p>Keranjang kosong</p>";
     totalEl.innerText = "";
     return;
   }
@@ -43,6 +43,7 @@ function renderCart() {
 
     container.innerHTML += `
       <div class="flex items-center gap-4 border-b pb-4 mb-4">
+      <input type="checkbox" class="check-barang" data-id="${item.id}" checked>
         <img src="${item.image}"
              class="w-20 h-20 object-cover rounded">
 
@@ -64,11 +65,18 @@ function renderCart() {
         <button onclick="removeFromCart(${item.id})"
           class="text-red-500 font-bold">X</button>
       </div>
+
     `;
   });
-
-  totalEl.innerText =
-    "Total: Rp " + total.toLocaleString("id-ID");
 }
 
+const total = document.getElementById('totalHarga')
+function hitung () {
+ cart.forEach((items) => {
+  console.log(items.price);
+ })
+    
+}
+
+hitung()
 renderCart();
