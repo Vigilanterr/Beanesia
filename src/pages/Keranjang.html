@@ -3,24 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Halaman Keranjang</title>
+  <title>Keranjang Belanja Premium</title>
   <link rel="shortcut icon" href="/src/assets/Include/Picture/WebLogo.svg" type="image/x-icon">
   <link rel="stylesheet" href="/src/output.css">
 </head>
-<body>        
-<section class="container mx-auto p-6 ">
-  <h1 class="text-3xl font-bold mb-6">Keranjang</h1>
-  <div id="cart-items"></div>
-      <button 
-      class="px-2 bg-amber-400 rounded font-bold w-20 "
-      onclick="alert('berhasil memesan')"
-      >Pesan</button>
-  <div class="mt-6">
-    <!-- <h2 id="cart-total" class="text-xl font-bold"></h2> -->
-     <h1>Total Harga : <span id="totalHarga"></span></h1>
-  </div>
-</section>
+<body class="bg-gray-50 text-gray-800 antialiased min-h-screen pb-12">        
 
-<script src="/src/dist/Main/cart.js"></script>
+    <div id="navbar-container"></div>
 
-<button
+  <main class="container mx-auto px-4 md:px-6 py-6">
+    <h1 class="text-2xl md:text-3xl font-extrabold mb-8 tracking-tight text-gray-900 flex items-center gap-3">
+      <i class="fa-solid fa-cart-shopping text-amber-500"></i> Keranjang Belanja
+    </h1>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+      
+      <div class="lg:col-span-2 space-y-4">
+        <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <span class="font-medium text-sm text-gray-600">Daftar Produk</span>
+          </div>
+        </div>
+
+        <div id="cart-items" class="space-y-4"></div>
+      </div>
+
+      <div class="lg:col-span-1 lg:sticky lg:top-6">
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <h3 class="text-lg font-bold mb-4 border-b pb-3 text-gray-900">Ringkasan Belanja</h3>
+          
+          <div class="space-y-3 text-sm text-gray-600 mb-6">
+            <div class="flex justify-between">
+              <span>Total Harga Barang</span>
+              <span id="subtotal-price">Rp 0</span>
+            </div>
+            <hr class="border-gray-100 my-2">
+            <div class="flex justify-between items-center pt-2">
+              <span class="text-base font-bold text-gray-900">Total Harga</span>
+              <div id="cart-total" class="text-xl font-extrabold text-amber-500">Rp 0</div>
+            </div>
+          </div>
+
+
+            <i class="fa-solid fa-chevron-right text-xs text-amber-700"></i>
+          </div>
+
+          <button 
+            onclick="alert('Pesanan Anda berhasil diproses! Terima kasih.')"
+            class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3.5 px-4 rounded-xl shadow-md shadow-amber-500/10 hover:shadow-lg transition duration-200 flex items-center justify-center gap-2 text-base tracking-wide"
+          >
+            <i class="fa-solid fa-bag-shopping"></i> Beli Sekarang
+          </button>
+        </div>
+    </div>
+  </main>
+
+  <script src="/src/dist/Main/cart.js"></script>
+  <script src="/src/dist/Main/HomePages.js"></script>
+</body>
+</html>
