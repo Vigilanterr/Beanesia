@@ -1,5 +1,3 @@
-
-
 async function getProducts() {
   try {
     const response = await fetch("./src/data/Category.json");
