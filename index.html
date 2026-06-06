@@ -10,107 +10,135 @@
 </head>
 <body class="bg-[#1a1a1a] text-white">
 
-<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-[#050505] px-[50px] h-[90px] border-b border-[#1a1a1a]">
-  <a href="#"><img src="/src/assets/Include/NavIcon/MainLogo.svg" class="h-[60px] object-contain"></a>
+<nav class="fixed top-0 left-0 w-full z-50 flex flex-col md:flex-row justify-between items-center bg-[#050505] px-4 md:px-[50px] py-4 md:py-0 md:h-[90px] border-b border-[#1a1a1a] gap-4 md:gap-0">
+  <a href="#"><img src="/src/assets/Include/NavIcon/MainLogo.svg" class="h-[40px] md:h-[60px] object-contain"></a>
 
-  <div class="flex items-center bg-white rounded-full px-5 w-[450px] h-[45px]">
+  <div class="flex items-center bg-white rounded-full px-5 w-full md:w-[450px] h-[40px] md:h-[45px]">
     <iconify-icon icon="material-symbols:search-rounded" width="24" class="text-gray-500 mr-3"></iconify-icon>
-    <input type="text" placeholder="Search" class="w-full bg-transparent outline-none text-base text-[#333] placeholder-[#999] font-medium">
+    <input type="text" placeholder="Search" class="w-full bg-transparent outline-none text-sm md:text-base text-[#333] placeholder-[#999] font-medium">
   </div>
 
-  <div class="flex items-center gap-[35px]">
-    <ul class="flex gap-10">
-      <li><a href="index.html" class="text-white font-bold pb-1 border-b-2 border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37] transition">Beranda</a></li>
-      <li><a href="index.html#products" class="text-white font-bold  pb-1 border-b-2 border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37] transition">Product</a></li>
-      <li><a href="index.html#Footer" class="text-white font-bold pb-1 border-b-2 border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37] transition">Contact</a></li>
+  <div class="flex items-center gap-4 md:gap-[35px] text-sm md:text-base overflow-x-auto w-full md:w-auto pb-2 md:pb-0 hide-scrollbar">
+    <ul class="flex gap-4 md:gap-10 shrink-0">
+      <li><a href="index.html#beranda" class="text-white font-bold pb-1 border-b-2 border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37] transition">Beranda</a></li>
+      <li><a href="index.html#products" class="text-white font-bold pb-1 border-b-2 border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37] transition">Product</a></li>
+      <li><a href="index.html#footer" class="text-white font-bold pb-1 border-b-2 border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37] transition">Contact</a></li>
     </ul>
 
-    <div class="w-px h-[35px] bg-white/40"></div>
+    <div class="hidden md:block w-px h-[35px] bg-white/40"></div>
 
-    <div class="flex items-center gap-[25px]">
+    <div class="flex items-center gap-2 md:gap-[25px] shrink-0">
       <a href="/src/pages/Login.html" class="group">
-        <iconify-icon icon="mdi:cart-outline" width="30" class="text-white transition group-hover:scale-110"></iconify-icon>
+        <iconify-icon icon="mdi:cart-outline" width="24" md:width="30" class="text-white transition group-hover:scale-110"></iconify-icon>
       </a>
-      <a href="/src/pages/Login.html" class="flex items-center gap-2 text-white font-bold  text-base group">
+      <a href="/src/pages/Login.html" class="flex items-center gap-2 text-white font-bold text-sm md:text-base group">
         <span>Login</span>
       </a>
     </div>
   </div>
 </nav>
 
-<div class="relative mt-20">
-  <img class="w-full h-auto object-cover" src="/src/assets/Include/Picture/MainBanner.svg" alt="Banner">
-  <div class="absolute top-1/2 left-20 -translate-y-1/2 max-w-lg">
-    <p class="text-[#D4AF37] text-lg mb-2">Pure Beans</p>
-    <h1 class="text-4xl font-bold mb-4">Kopi Indonesia,<br>Cita Rasa Nusantara</h1>
-    <p class="text-gray-300 mb-6">Biji kopi pilihan terbaik dari berbagai daerah di Indonesia untuk menghadirkan cita rasa autentik di setiap cangkirnya.</p>
-    <a href="#products-section" class="bg-[#D4AF37] text-black font-bold px-6 py-2 rounded-full">Belanja Sekarang</a>
+<div id="beranda" class="relative mt-[140px] md:mt-20">
+  <img class="w-full h-[300px] md:h-auto object-cover" src="/src/assets/Include/Picture/MainBanner.svg" alt="Banner">
+  <div class="absolute inset-0 bg-black/40 md:hidden"></div>
+  <div class="absolute top-1/2 left-4 md:left-20 -translate-y-1/2 max-w-[90%] md:max-w-lg z-10">
+    <p class="text-[#D4AF37] text-sm md:text-lg mb-2">Pure Beans</p>
+    <h1 class="text-2xl md:text-4xl font-bold mb-2 md:mb-4 leading-tight">Kopi Indonesia,<br>Cita Rasa Nusantara</h1>
+    <p class="text-gray-300 text-xs md:text-base mb-4 md:mb-6 line-clamp-3 md:line-clamp-none">Biji kopi pilihan terbaik dari berbagai daerah di Indonesia untuk menghadirkan cita rasa autentik di setiap cangkirnya.</p>
+    <a href="#products-section" class="inline-block bg-[#D4AF37] text-black font-bold px-4 py-2 md:px-6 md:py-2 rounded-full text-sm md:text-base">Belanja Sekarang</a>
   </div>
 </div>
 
-<main class="max-w-7xl mx-auto px-12 py-16">
-  
-  <div class="mb-20">
-    <h2 class="text-3xl font-bold mb-6 border-b-2 border-[#D4AF37] inline-block pb-2">Penjualan Terlaris</h2>
-    <div id="best-seller" class="grid grid-cols-4 gap-6"></div>
+<main class="max-w-7xl mx-auto px-4 md:px-12 py-10 md:py-16">
+<div class="mb-12">
+  <h2 class="text-3xl font-bold text-white mb-6">Kebun <span class="text-[#D4AF37]">Kami</span></h2>
+  <div class="md:flex bg-[#111111] rounded-2xl border border-[#333] overflow-hidden">
+    <img src="https://i.pinimg.com/1200x/92/da/04/92da040203a1c8af75cc70188e4c1cf3.jpg" alt="Kebun Kopi" class="w-full md:w-1/2 h-64 md:h-auto object-cover">
+    <div class="p-8 md:p-10 md:w-1/2 flex flex-col justify-center">     
+      <h3 class="text-2xl font-bold text-white mb-3">Dari Tanah Nusantara untuk <span class="text-[#D4AF37]">Dunia</span></h3> 
+      <p class="text-gray-400 mb-8 leading-relaxed">
+        Biji kopi Beanesia ditanam dan dirawat dengan penuh dedikasi oleh para petani lokal di dataran tinggi Indonesia. Kami percaya kualitas terbaik berawal dari tanah yang subur.
+      </p>
+      
+      <div class="bg-black border border-[#D4AF37] p-5 rounded-xl text-center">
+        <h4 class="text-[#D4AF37] font-bold text-3xl mb-1">100%</h4>
+        <p class="text-gray-300 text-sm">Kopi murni tanpa campuran bahan lain</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+  <div class="mb-12 md:mb-20">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6 border-b-2 border-[#D4AF37] inline-block pb-2">Penjualan Terlaris</h2>
+    <div id="best-seller" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"></div>
   </div>
 
   <div id="products-section">
-    <div class="flex justify-between items-end mb-6 border-b-2 border-[#D4AF37] pb-2">
-      <h2 class="text-3xl font-bold">Semua Produk</h2>
-      <div class="flex gap-2">
-        <button onclick="filterCategory('Semua', this)" class="filter-btn bg-[#D4AF37] text-black px-4 py-1 rounded-full text-sm font-bold border border-[#D4AF37]">Semua</button>
-        <button onclick="filterCategory('Arabica', this)" class="filter-btn text-[#D4AF37] px-4 py-1 rounded-full text-sm font-bold border border-[#D4AF37]">Arabica</button>
-        <button onclick="filterCategory('Robusta', this)" class="filter-btn text-[#D4AF37] px-4 py-1 rounded-full text-sm font-bold border border-[#D4AF37]">Robusta</button>
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-6 border-b-2 border-[#D4AF37] pb-2 gap-4 md:gap-0">
+      <h2 class="text-2xl md:text-3xl font-bold">Semua Produk</h2>
+      <div class="flex flex-wrap gap-2">
+        <button onclick="filterCategory('Semua', this)" class="filter-btn bg-[#D4AF37] text-black px-4 py-1 rounded-full text-xs md:text-sm font-bold border border-[#D4AF37]">Semua</button>
+        <button onclick="filterCategory('Arabica', this)" class="filter-btn text-[#D4AF37] px-4 py-1 rounded-full text-xs md:text-sm font-bold border border-[#D4AF37]">Arabica</button>
+        <button onclick="filterCategory('Robusta', this)" class="filter-btn text-[#D4AF37] px-4 py-1 rounded-full text-xs md:text-sm font-bold border border-[#D4AF37]">Robusta</button>
       </div>
     </div>
-    <div id="products" class="grid grid-cols-4 gap-6"></div>
+    <div id="products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"></div>
   </div>
 
 </main>
 
-<footer class="bg-[#050505] text-white py-16 border-t border-[#1a1a1a]">
-  <div class="container mx-auto px-[50px]">
-    <div class="flex flex-col md:flex-row justify-between gap-12">
+<footer id="footer" class="bg-[#050505] text-white py-10 md:py-16 border-t border-[#1a1a1a]">
+  <div class="container mx-auto px-4 md:px-[50px]">
+    <div class="flex flex-col md:flex-row justify-between gap-10 md:gap-12">
       
-      <div class="gap-6 max-w-sm">
-        <img src="/src/assets/Include/NavIcon/MainLogo.svg" class="h-20 w-auto">
+      <div class="flex flex-col gap-4 max-w-sm">
+        <img src="/src/assets/Include/NavIcon/MainLogo.svg" class="h-16 md:h-20 w-auto self-start">
         <p class="text-gray-400 text-sm leading-relaxed">
           Beanesia adalah brand kopi asli Indonesia yang menghadirkan biji kopi berkualitas dari petani lokal terbaik.
         </p>
       </div>
 
-      <div class="flex flex-col gap-6">
-        <h4 class="text-lg font-bold">Contact</h4>
-        <div class="flex flex-col gap-4">
-          <a href="https://wa.me/6285717264083" target="_blank" class="flex items-center gap-3 group">
-            <iconify-icon icon="mdi:whatsapp" width="20" class="text-white group-hover:scale-110"></iconify-icon>
-            <span class="text-gray-300 text-sm hover:text-white">0857-1726-4083</span>
-          </a>
-          <a href="https://instagram.com" target="_blank" class="flex items-center gap-3 group">
-            <iconify-icon icon="mdi:instagram" width="20" class="text-white group-hover:scale-110"></iconify-icon>
-            <span class="text-gray-300 text-sm hover:text-white">@BeanesiaCoffee</span>
-          </a>
+      <div class="grid grid-cols-2 md:flex md:gap-12 gap-8 w-full md:w-auto">
+        <div class="flex flex-col gap-4 md:gap-6">
+          <h4 class="text-base md:text-lg font-bold">Contact</h4>
+          <div class="flex flex-col gap-3 md:gap-4">
+            <a href="https://wa.me/6285717264083" target="_blank" class="flex items-center gap-2 md:gap-3 group">
+              <iconify-icon icon="mdi:whatsapp" width="20" class="text-white group-hover:scale-110"></iconify-icon>
+              <span class="text-gray-300 text-xs md:text-sm hover:text-white break-all">0857-1726-4083</span>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="flex items-center gap-2 md:gap-3 group">
+              <iconify-icon icon="mdi:instagram" width="20" class="text-white group-hover:scale-110"></iconify-icon>
+              <span class="text-gray-300 text-xs md:text-sm hover:text-white">@BeanesiaCoffee</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-4 md:gap-6 md:mr-5">
+          <h4 class="text-base md:text-lg font-bold">Navigasi</h4>
+          <ul class="flex flex-col gap-2 md:gap-3 text-xs md:text-sm text-gray-400">
+            <li><a href="index.html" class="hover:text-[#D4AF37]">Beranda</a></li>
+            <li><a href="index.html#products" class="hover:text-[#D4AF37]">Product</a></li>
+          </ul>
         </div>
       </div>
-
-      <div class="flex flex-col gap-6 mr-5">
-        <h4 class="text-lg font-bold">Navigasi</h4>
-        <ul class="flex flex-col gap-3 text-sm text-gray-400">
-          <li><a href="index.html" class="hover:text-[#D4AF37]">Beranda</a></li>
-          <li><a href="index.html#products" class="hover:text-[#D4AF37]">Product</a></li>
-        </ul>
-      </div>
-
     </div>
 
-    <div class="mt-16 pt-8 border-t border-[#1a1a1a] text-center">
-      <p class="text-gray-600 text-[10px] uppercase tracking-widest">
+    <div class="mt-10 md:mt-16 pt-6 md:pt-8 border-t border-[#1a1a1a] text-center">
+      <p class="text-gray-600 text-[10px] md:text-xs uppercase tracking-widest">
         © 2026 Beanesia Coffee Beans. All rights reserved.
       </p>
     </div>
   </div>
 </footer>
+
+<style>
+    html {
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    }
+</style>
 
 <script src="/src/dist/Main/LandingCategory.js"></script>
 </body>

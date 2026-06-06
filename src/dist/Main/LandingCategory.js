@@ -31,7 +31,7 @@ function cetakProduct(p, best) {
         </div>
         <p class="text-sm text-gray-400 mb-4 line-clamp-2">${p.detail}</p>
         ${terjual}
-        <a href="/src/pages/login.html" class="mt-auto flex justify-center w-full text-xs font-bold text-black bg-gradient-to-r from-[#D4AF37] to-[#e8c86b] px-4 py-3.5 rounded-xl uppercase hover:opacity-80 transition-all">
+        <a href="/src/pages/Login.html" class="mt-auto flex justify-center w-full text-xs font-bold text-black bg-gradient-to-r from-[#D4AF37] to-[#e8c86b] px-4 py-3.5 rounded-xl uppercase hover:opacity-80 transition-all">
           Beli sekarang
         </a>
       </div>
