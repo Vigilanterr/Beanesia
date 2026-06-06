@@ -1,57 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beanesia - Homepage</title>
-    <link rel="stylesheet" href="/src/output.css">
-    <link rel="shortcut icon" href="/src/assets/Include/Picture/WebLogo.svg" type="image/x-icon">
-    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
-
-    <!-- HILANGKAN SCROLLBARRR WOIII GANGGU BANGETT -->
-     
-    <style> 
-    html {
-    scrollbar-width: none;
-    scroll-behavior: smooth;
-    }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beanesia - Homepage</title>
+  <link rel="stylesheet" href="/src/output.css">
+  <link rel="shortcut icon" href="/src/assets/Include/Picture/WebLogo.svg" type="image/x-icon">
+  <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
 </head>
-<body class="bg-[#1a1a1a] text-white scroll-smooth">
-    <div id="navbar-container"></div>
+<body class="bg-[#1a1a1a] text-white">
 
-    <div id="hero-container"></div>
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-[#050505] px-[50px] h-[90px] border-b border-[#1a1a1a]">
+  <a href="#"><img src="/src/assets/Include/NavIcon/MainLogo.svg" class="h-[60px] object-contain"></a>
 
-    <main class="p-20 font-bold mt-2 text-center">
-        <div id="best-seller" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-5">
-</div>
-    <div id="products" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-5 mt-20">
+  <div class="flex items-center bg-white rounded-full px-5 w-[450px] h-[45px]">
+    <iconify-icon icon="material-symbols:search-rounded" width="24" class="text-gray-500 mr-3"></iconify-icon>
+    <input type="text" placeholder="Search" class="w-full bg-transparent outline-none text-base text-[#333] placeholder-[#999] font-medium">
+  </div>
+
+  <div class="flex items-center gap-[35px]">
+    <ul class="flex gap-10">
+      <li><a href="index.html" class="text-white font-bold pb-1 border-b-2 border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37] transition">Beranda</a></li>
+      <li><a href="index.html#products" class="text-white font-bold  pb-1 border-b-2 border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37] transition">Product</a></li>
+      <li><a href="index.html#Footer" class="text-white font-bold pb-1 border-b-2 border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37] transition">Contact</a></li>
+    </ul>
+
+    <div class="w-px h-[35px] bg-white/40"></div>
+
+    <div class="flex items-center gap-[25px]">
+      <a href="/src/pages/Login.html" class="group">
+        <iconify-icon icon="mdi:cart-outline" width="30" class="text-white transition group-hover:scale-110"></iconify-icon>
+      </a>
+      <a href="/src/pages/Login.html" class="flex items-center gap-2 text-white font-bold  text-base group">
+        <span>Login</span>
+      </a>
     </div>
-    </main>
+  </div>
+</nav>
 
-    <div id="Footer"></div>
+<div class="relative mt-20">
+  <img class="w-full h-auto object-cover" src="/src/assets/Include/Picture/MainBanner.svg" alt="Banner">
+  <div class="absolute top-1/2 left-20 -translate-y-1/2 max-w-lg">
+    <p class="text-[#D4AF37] text-lg mb-2">Pure Beans</p>
+    <h1 class="text-4xl font-bold mb-4">Kopi Indonesia,<br>Cita Rasa Nusantara</h1>
+    <p class="text-gray-300 mb-6">Biji kopi pilihan terbaik dari berbagai daerah di Indonesia untuk menghadirkan cita rasa autentik di setiap cangkirnya.</p>
+    <a href="#products-section" class="bg-[#D4AF37] text-black font-bold px-6 py-2 rounded-full">Belanja Sekarang</a>
+  </div>
+</div>
 
-<script src="/src/dist/Main/LandingPages.js"></script>
+<main class="max-w-7xl mx-auto px-12 py-16">
+  
+  <div class="mb-20">
+    <h2 class="text-3xl font-bold mb-6 border-b-2 border-[#D4AF37] inline-block pb-2">Penjualan Terlaris</h2>
+    <div id="best-seller" class="grid grid-cols-4 gap-6"></div>
+  </div>
+
+  <div id="products-section">
+    <div class="flex justify-between items-end mb-6 border-b-2 border-[#D4AF37] pb-2">
+      <h2 class="text-3xl font-bold">Semua Produk</h2>
+      <div class="flex gap-2">
+        <button onclick="filterCategory('Semua', this)" class="filter-btn bg-[#D4AF37] text-black px-4 py-1 rounded-full text-sm font-bold border border-[#D4AF37]">Semua</button>
+        <button onclick="filterCategory('Arabica', this)" class="filter-btn text-[#D4AF37] px-4 py-1 rounded-full text-sm font-bold border border-[#D4AF37]">Arabica</button>
+        <button onclick="filterCategory('Robusta', this)" class="filter-btn text-[#D4AF37] px-4 py-1 rounded-full text-sm font-bold border border-[#D4AF37]">Robusta</button>
+      </div>
+    </div>
+    <div id="products" class="grid grid-cols-4 gap-6"></div>
+  </div>
+
+</main>
+
+<footer class="bg-[#050505] text-white py-16 border-t border-[#1a1a1a]">
+  <div class="container mx-auto px-[50px]">
+    <div class="flex flex-col md:flex-row justify-between gap-12">
+      
+      <div class="gap-6 max-w-sm">
+        <img src="/src/assets/Include/NavIcon/MainLogo.svg" class="h-20 w-auto">
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Beanesia adalah brand kopi asli Indonesia yang menghadirkan biji kopi berkualitas dari petani lokal terbaik.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <h4 class="text-lg font-bold">Contact</h4>
+        <div class="flex flex-col gap-4">
+          <a href="https://wa.me/6285717264083" target="_blank" class="flex items-center gap-3 group">
+            <iconify-icon icon="mdi:whatsapp" width="20" class="text-white group-hover:scale-110"></iconify-icon>
+            <span class="text-gray-300 text-sm hover:text-white">0857-1726-4083</span>
+          </a>
+          <a href="https://instagram.com" target="_blank" class="flex items-center gap-3 group">
+            <iconify-icon icon="mdi:instagram" width="20" class="text-white group-hover:scale-110"></iconify-icon>
+            <span class="text-gray-300 text-sm hover:text-white">@BeanesiaCoffee</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-6 mr-5">
+        <h4 class="text-lg font-bold">Navigasi</h4>
+        <ul class="flex flex-col gap-3 text-sm text-gray-400">
+          <li><a href="index.html" class="hover:text-[#D4AF37]">Beranda</a></li>
+          <li><a href="index.html#products" class="hover:text-[#D4AF37]">Product</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-[#1a1a1a] text-center">
+      <p class="text-gray-600 text-[10px] uppercase tracking-widest">
+        © 2026 Beanesia Coffee Beans. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
 <script src="/src/dist/Main/LandingCategory.js"></script>
-
-<!-- MAMPUS GAK BISA RESPONSIVE2 AN AWOKAWOK -->
-
-<script>
-document.addEventListener('keydown', function(e) {
-    if (e.key === "F12") {
-        e.preventDefault();
-    }
-    if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) {
-        e.preventDefault();
-    }
-    if (e.ctrlKey && e.key === 'U') {
-        e.preventDefault();
-    }
-});
-
-document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-});
-</script>
 </body>
 </html>
