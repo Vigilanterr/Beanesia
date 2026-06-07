@@ -16,7 +16,6 @@ Sistem ini memetakan interaksi tiga aktor utama dengan peran dan batasan fungsio
 
 1. Pelanggan / Pembeli (Consumer): Menjelajahi katalog kopi Nusantara, melihat informasi karakteristik profil rasa, mengelola keranjang belanja (cart), serta melakukan simulasi pembelian produk.
 2. Pemilik Toko / Pengelola Bisnis (Merchant): Mengelola ketersediaan stok, memperbarui varietas kopi daerah melalui pemeliharaan data lokal, dan menentukan strategi harga pasar.
-3. Administrator Sistem (Developer): Menjaga performa web, mengelola integritas komponen modular (Navbar, Hero, Footer), serta memantau penanganan asinkronus Fetch API agar bebas dari kegagalan muat data.
 
 ---
 
