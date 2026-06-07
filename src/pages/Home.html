@@ -1,115 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Home</title>
-    <link rel="stylesheet" href="/src/output.css">
-    <link rel="shortcut icon" href="/src/assets/Include/Picture/WebLogo.svg" type="image/x-icon">
-    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beanesia - Home</title>
+  <link rel="shortcut icon" href="/src/assets/Include/Picture/WebLogo.svg" type="image/x-icon" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+  <style> html { scrollbar-width: none; scroll-behavior: smooth; } </style>
 </head>
-    <style> 
-    html {
-    scrollbar-width: none;
-    scroll-behavior: smooth;
-    }
-    </style>
-<body class="bg-[#1a1a1a] scroll-smooth">
-<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-[#050505] px-[50px] h-[90px] border-b border-[#1a1a1a]">
+<body class="bg-[#1a1a1a] text-white">
 
-    <a href="" class="block">
-        <img src="/src/assets/Include/NavIcon/MainLogo.svg" 
-        alt="Beanesia Logo" 
-        class="h-15 object-contain">
+  <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-[#050505] px-6 lg:px-[50px] h-[90px] border-b border-[#1a1a1a] gap-4">
+    <a href="#" class="shrink-0">
+      <img src="/src/assets/Include/NavIcon/MainLogo.svg" alt="Logo" class="h-12 object-contain" />
     </a>
 
-    <div class="flex items-center bg-white rounded-full px-5 w-[450px] h-[45px]">
-        <iconify-icon
-            icon="material-symbols:search-rounded"
-            width="24"
-            height="24"
-            class="text-gray-500 mr-3">
-        </iconify-icon>
+<div class="relative hidden md:flex flex-1 max-w-[400px] mx-6">
+      
+      <div class="flex items-center bg-white rounded-full px-5 h-[42px] w-full">
+        <iconify-icon icon="material-symbols:search-rounded" width="22" class="text-gray-500 mr-3"></iconify-icon>
+        <input 
+          id="input-pencarian" 
+          type="text" 
+          placeholder="Cari Kopi..." 
+          autocomplete="off"
+          onkeyup="cariProduk()" 
+          class="outline-none bg-transparent w-full text-sm text-[#333] placeholder-[#999]" 
+        />
+      </div>
 
-        <input
-            type="text"
-            placeholder="Search"
-            class="outline-none bg-transparent text-base w-full text-[#333] placeholder-[#999] font-medium">
+      <div 
+        id="wadah-rekomendasi" 
+        class="absolute top-[50px] left-0 w-full bg-white rounded-xl shadow-lg overflow-hidden hidden flex-col z-50 border border-gray-100"
+      >
+      </div>
+      
     </div>
 
-    <div class="flex items-center gap-[35px]">
+    <div class="flex items-center gap-6 shrink-0">
+      <ul class="hidden md:flex gap-8">
+        <li><a href="#beranda" class="text-white font-bold hover:text-[#D4AF37] transition">Beranda</a></li>
+        <li><a href="#products" class="text-white font-bold hover:text-[#D4AF37] transition">Produk</a></li>
+        <li><a href="#footer" class="text-white font-bold hover:text-[#D4AF37] transition">Kontak</a></li>
+      </ul>
+      <div class="hidden md:block w-px h-8 bg-white/40"></div>
+      <div class="flex items-center gap-5">
+        <a href="/src/pages/Keranjang.html">
+          <iconify-icon icon="mdi:cart-outline" width="25" class="text-white hover:scale-110 transition mt-1"></iconify-icon>
+        </a>
+        <a href="/src/pages/Profile.html" class="flex items-center gap-2 text-white font-medium">
+          <span id="nama-pengguna" class="hidden sm:block text-sm"></span>
+          <img id="foto-navbar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=default" class="w-9 h-9 rounded-full object-cover ring-2 ring-[#C4A46C]/40" />
+        </a>
+      </div>
+    </div>
+  </nav>
 
-        <ul class="flex gap-10">
-            <li>
-                <a href="/src/pages/Home.html#" 
-                class="text-white font-bold pb-1 border-b-2 border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all duration-200">
-                    Beranda
-                </a>
-            </li>
+  <section id="beranda" class="relative mt-[90px]">
+    <img src="/src/assets/Include/Picture/MainBanner.svg" alt="Banner" class="w-full h-[480px] object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+    <div class="absolute top-1/2 left-8 md:left-20 -translate-y-1/2 max-w-lg px-4">
+      <p class="text-[#D4AF37] text-xs mb-3 tracking-widest uppercase">Pure Beans</p>
+      <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">Kopi Indonesia,<br>Cita Rasa Nusantara</h1>
+      <p class="text-gray-300 text-sm md:text-base mb-6 leading-relaxed">Biji kopi pilihan dari berbagai daerah Indonesia untuk cita rasa autentik di setiap cangkirnya.</p>
+      <a href="#products" class="inline-block bg-[#D4AF37] text-black font-bold px-6 py-3 rounded-full text-sm hover:bg-[#b8972e] transition">Belanja Sekarang</a>
+    </div>
+  </section>
 
-            <li>
-                <a href="/src/pages/Home.html#products" 
-                class="text-white font-bold pb-1 border-b-2 border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all duration-200">
-                    Product
-                </a>
-            </li>
+  <section class="max-w-7xl mx-auto px-6 md:px-12 py-12">
+    <div class="flex justify-between items-end mb-5 border-b-2 border-[#D4AF37] pb-2">
+      <h2 class="text-2xl md:text-3xl font-bold">Penjualan Terlaris</h2>
+      <a href="#products" class="text-[#D4AF37] text-sm hover:underline">Lihat semua →</a>
+    </div>
+    <div id="best-seller" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5"></div>
+  </section>
 
-            <li>
-                <a href="/src/pages/Home.html#Footer" 
-                class="text-white font-bold pb-1 border-b-2 border-transparent hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all duration-200">
-                    Contact
-                </a>
-            </li>
-        </ul>
+  <section id="products" class="max-w-7xl mx-auto px-6 md:px-12 pb-20">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-5 border-b-2 border-[#D4AF37] pb-2 gap-3">
+      <h2 class="text-2xl md:text-3xl font-bold">Semua Produk</h2>
+      <div class="flex gap-2">
+        <button onclick="filter('Semua', this)" class="btn-filter bg-[#D4AF37] text-black px-4 py-1 rounded-full text-sm font-bold border border-[#D4AF37]">Semua</button>
+        <button onclick="filter('Arabica', this)" class="btn-filter text-[#D4AF37] px-4 py-1 rounded-full text-sm font-bold border border-[#D4AF37]">Arabica</button>
+        <button onclick="filter('Robusta', this)" class="btn-filter text-[#D4AF37] px-4 py-1 rounded-full text-sm font-bold border border-[#D4AF37]">Robusta</button>
+      </div>
+    </div>
+    <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5"></div>
+  </section>
 
-        <div class="w-px h-[35px] bg-white/40"></div>
-
-        <div class="flex items-center gap-[25px]">
-
-            <a href="/src/pages/Keranjang.html" class="group">
-                <iconify-icon
-                    icon="mdi:cart-outline"
-                    width="25"
-                    height="25"
-                    class="text-white transition duration-200 mt-2 group-hover:scale-110">
-                </iconify-icon>
+  <footer id="footer" class="bg-[#050505] border-t border-[#1a1a1a] py-14">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between gap-10">
+      <div class="max-w-sm">
+        <img src="/src/assets/Include/NavIcon/MainLogo.svg" class="h-14 mb-4" />
+        <p class="text-gray-400 text-sm leading-relaxed">Beanesia adalah brand kopi asli Indonesia yang menghadirkan biji kopi berkualitas dari petani lokal terbaik.</p>
+      </div>
+      <div class="flex gap-14">
+        <div>
+          <h4 class="font-bold mb-4">Kontak</h4>
+          <div class="flex flex-col gap-3 text-sm text-gray-300">
+            <a href="https://wa.me/6285717264083" target="_blank" class="flex items-center gap-2 hover:text-white">
+              <iconify-icon icon="mdi:whatsapp" width="18"></iconify-icon> 0857-1726-4083
             </a>
-
-<a href="/src/pages/Profile.html" class="flex items-center gap-3 text-white font-medium text-base group">
-    <span id="nama-pengguna"></span>
-    <img 
-        id="foto-navbar"
-        src=""
-        alt="Foto Profil"
-        class="size-9 rounded-full object-cover bg-white">
-</a>
-
+            <a href="https://instagram.com" target="_blank" class="flex items-center gap-2 hover:text-white">
+              <iconify-icon icon="mdi:instagram" width="18"></iconify-icon> @BeanesiaCoffee
+            </a>
+          </div>
         </div>
-
+        <div>
+          <h4 class="font-bold mb-4">Navigasi</h4>
+          <ul class="flex flex-col gap-2 text-sm text-gray-400">
+            <li><a href="#beranda" class="hover:text-[#D4AF37]">Beranda</a></li>
+            <li><a href="#products" class="hover:text-[#D4AF37]">Produk</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-
-</nav>
-<img 
-    class="w-full object-cover mt-20"
-    src="/src/assets/Include/Picture/SecBanner.png" 
-    alt="Banner">
-
-    <main class="p-20 font-bold mt-2 text-center">
-    <h1 class="text-yellow-500 mb-12 text">Best Seller</h1>
-    <h1 class="text-yellow-500 text-right"><a href="/src/pages/Home.html#products"> Lihat selengkapnya</a></h1>
-    <div id="best-products" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-5"></div>
+    <div class="max-w-7xl mx-auto px-12 mt-10 pt-6 border-t border-[#1a1a1a] text-center">
+      <p class="text-gray-600 text-xs uppercase tracking-widest">© 2026 Beanesia Coffee Beans. All rights reserved.</p>
     </div>
-    <h1 class="text-yellow-500 my-12">INI SEMUA PRODUK</h1>
-    <div id="products" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-5">
-    </div>
+  </footer>
 
-    </main>
-    
-    <button
-    onclick="logout()">Keluar</button>
+<script src="/src/dist/main/HomeCategory.js"></script>
 
-    <div id="Footer"></div>
-    <script src="/src/dist/Main/HomeCategory.js"></script>
-    <script src="/src//dist/Main/HomePages.js"></script>
 </body>
 </html>

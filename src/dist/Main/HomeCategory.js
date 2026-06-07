@@ -1,135 +1,118 @@
-async function getProducts() {
-  try {
-    const response = await fetch("/src/data/Category.json");
-    const data = await response.json();
-    const products = data.products;
+    let produkList = [];
 
-    const container = document.getElementById("products");
+    async function init() {
+      const res = await fetch("/src/data/Category.json");
+      const data = await res.json();
+      produkList = data.products;
+      tampil('Semua');
+      bestSeller();
+      akunNavbar();
+    }
 
-    products.forEach(p => {
-      const div = document.createElement("div");
-      div.className = "h-full";
-      div.innerHTML = `
-        <div class="bg-[#121212] border border-[#2a2a2a] rounded-xl shadow-md hover:shadow-2xl hover:border-[#D4AF37] transition duration-300 overflow-hidden group flex flex-col h-full">
-          
-          <div class="relative overflow-hidden shrink-0">
-            <img 
-              src="${p.image}" 
-              alt="${p.nama}" 
-              class="w-full h-56 object-cover transition duration-500 group-hover:scale-110"
-            />
-            <div class="absolute top-4 left-4 bg-[#D4AF37] text-black text-[10px] font-bold px-2 py-1 rounded uppercase tracking-tighter">
-              ${p.category}
-            </div>
+    function kartu(p, best) {
+      const label = best
+        ? `<div class="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase flex items-center gap-1"><iconify-icon icon="mdi:fire" width="12"></iconify-icon> Best Seller</div>`
+        : `<div class="absolute top-3 left-3 bg-black/70 border border-[#D4AF37]/50 text-[#D4AF37] text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">${p.category}</div>`;
+      const terjual = best ? `<p class="text-xs text-gray-400 mb-3 border-t border-[#2a2a2a] pt-3"><span class="text-white font-semibold">${p.sold}</span> Terjual</p>` : '';
+      return `
+        <div class="bg-[#111111] border border-[#2a2a2a] rounded-2xl overflow-hidden flex flex-col group hover:border-[#D4AF37] transition duration-300">
+          <div class="relative h-52 overflow-hidden shrink-0">
+            <img src="${p.image}" alt="${p.nama}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            ${label}
           </div>
-
-          <div class="p-6 flex flex-col grow">
+          <div class="p-4 flex flex-col grow">
             <div class="flex justify-between items-start mb-2 gap-2">
-              <h5 class="text-xl font-bold text-white tracking-tight leading-tight">
-                ${p.nama}
-              </h5>
-              <span class="text-[#D4AF37] font-bold text-sm whitespace-nowrap">
-                Rp ${p.harga.toLocaleString('id-ID')}
-              </span>
+              <h5 class="text-sm font-bold leading-tight">${p.nama}</h5>
+              <span class="text-[#D4AF37] font-bold text-sm whitespace-nowrap">Rp ${p.harga.toLocaleString('id-ID')}</span>
             </div>
-
-            <p class="text-sm text-gray-400 mb-6 line-clamp-3 leading-relaxed">
-              ${p.detail}
-            </p>
-
-            <div class="mt-auto">
-              <a 
-                href="/src/pages/detail.html?id=${p.id}"
-                class="flex items-center justify-center gap-2 w-full text-xs font-black text-black bg-[#D4AF37] px-4 py-3 rounded-lg hover:bg-[#b8972e] transition-all uppercase tracking-widest"
-              >
-                Read More
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
-              </a>
-            </div>
+            <p class="text-xs text-gray-400 mb-3 line-clamp-2">${p.detail}</p>
+            ${terjual}
+            <a href="/src/pages/Detail.html?id=${p.id}" class="mt-auto text-center text-xs font-bold text-black bg-[#D4AF37] py-2.5 rounded-xl hover:bg-[#b8972e] transition uppercase">Beli Sekarang</a>
           </div>
-        </div>
-      `;
+        </div>`;
+    }
 
-      container.appendChild(div);
-    });
+    function tampil(kat) {
+      const el = document.getElementById("products-grid");
+      const list = kat === 'Semua' ? produkList : produkList.filter(p => p.category === kat);
+      el.innerHTML = list.map(p => kartu(p, false)).join('');
+    }
 
-  } catch (error) {
-    console.error("Error loading Beanesia products:", error);
+    function bestSeller() {
+      const el = document.getElementById("best-seller");
+      el.innerHTML = produkList.filter(p => p.sold > 300).map(p => kartu(p, true)).join('');
+    }
+
+    function filter(kat, btn) {
+      document.querySelectorAll('.btn-filter').forEach(b => {
+        b.classList.remove('bg-[#D4AF37]', 'text-black');
+        b.classList.add('text-[#D4AF37]');
+      });
+      btn.classList.add('bg-[#D4AF37]', 'text-black');
+      btn.classList.remove('text-[#D4AF37]');
+      tampil(kat);
+    }
+
+    function akunNavbar() {
+      const user = JSON.parse(sessionStorage.getItem("user") || "null");
+      if (user) {
+        document.getElementById("nama-pengguna").textContent = user.name || "";
+        document.getElementById("foto-navbar").src = user.foto || "https://api.dicebear.com/9.x/adventurer/svg?seed=default";
+      }
+    }
+
+    init();
+
+  // FUNGSI PENCARIAN PRODUK
+function cariProduk() {
+  const kataKunci = document.getElementById("input-pencarian").value.toLowerCase();
+  const wadah = document.getElementById("wadah-rekomendasi");
+
+  wadah.innerHTML = "";
+
+  if (kataKunci === "") {
+    wadah.classList.add("hidden");
+    return; 
   }
-}
 
-async function bestSeller() {
-  try {
-    const response = await fetch("/src/data/Category.json");
-    const data = await response.json();
-    const products = data.products;
+  // PERBAIKAN: Ubah dataSemuaProduk menjadi produkList sesuai variabelmu di atas
+  const hasilPencarian = produkList.filter(produk => 
+    produk.nama.toLowerCase().includes(kataKunci)
+  );
 
-    const container = document.getElementById("best-products");
-
-    products.filter(p =>{
-      const div = document.createElement("div");
-      div.className = "h-full";
-      div.innerHTML = `
-        <div class="bg-[#121212] border border-[#2a2a2a] rounded-xl shadow-md hover:shadow-2xl hover:border-[#D4AF37] transition duration-300 overflow-hidden group flex flex-col h-full">
-          
-          <div class="relative overflow-hidden shrink-0">
-            <img 
-              src="${p.image}" 
-              alt="${p.nama}" 
-              class="w-full h-56 object-cover transition duration-500 group-hover:scale-110"
-            />
-            <div class="absolute top-4 left-4 bg-[#D4AF37] text-black text-[10px] font-bold px-2 py-1 rounded uppercase tracking-tighter">
-              ${p.category}
-            </div>
+  if (hasilPencarian.length > 0) {
+    const produkDibatasi = hasilPencarian.slice(0, 5);
+    
+    produkDibatasi.forEach(p => {
+      wadah.innerHTML += `
+        <a href="/src/pages/Detail.html?id=${p.id}" class="flex items-center gap-3 p-3 hover:bg-gray-50 transition border-b border-gray-100 last:border-0">
+          <img src="${p.image}" class="w-10 h-10 rounded-md object-cover bg-gray-200" />
+          <div>
+            <p class="text-sm font-bold text-gray-800">${p.nama}</p>
+            <p class="text-xs text-[#C4A46C] font-semibold">Rp ${p.harga.toLocaleString('id-ID')}</p>
           </div>
-
-          <div class="p-6 flex flex-col grow">
-            <div class="flex justify-between items-start mb-2 gap-2">
-              <h5 class="text-xl font-bold text-white tracking-tight leading-tight">
-                ${p.nama}
-              </h5>
-              <span class="text-[#D4AF37] font-bold text-sm whitespace-nowrap">
-                Rp ${p.harga.toLocaleString('id-ID')}
-              </span>
-            </div>
-
-            <p class="text-sm text-gray-400 mb-6 line-clamp-3 leading-relaxed">
-              ${p.detail}
-            </p>
-
-            <div class="mt-auto">
-              <a 
-                href="/src/pages/Detail.html?id=${p.id}"
-                class="flex items-center justify-center gap-2 w-full text-xs font-black text-black bg-[#D4AF37] px-4 py-3 rounded-lg hover:bg-[#b8972e] transition-all uppercase tracking-widest"
-              >
-                Read More
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
+        </a>
       `;
-
-      container.appendChild(div);
     });
-
-  } catch (error) {
-    console.error("Error loading Beanesia products:", error);
+  } else {
+    wadah.innerHTML = `
+      <p class="p-4 text-center text-sm text-gray-500 font-medium">
+        gak tersedia
+      </p>
+    `;
   }
+
+  wadah.classList.remove("hidden");
 }
 
-// Menampilkan nama  dan profile dari localstorage
-const dataUser = sessionStorage.getItem("user");
-if (dataUser) {
-  const user = JSON.parse(dataUser);
-  document.getElementById("nama-pengguna").textContent = user.name;
-  document.getElementById("foto-navbar").src = user.foto || "https://api.dicebear.com/9.x/adventurer/svg?seed=default";
-}
-
-
-bestSeller();
-getProducts();
+// FUNGSI TAMBAHAN: Menutup dropdown saat klik di luar
+document.addEventListener("click", function(event) {
+  const kotakSearch = document.getElementById("input-pencarian");
+  const wadah = document.getElementById("wadah-rekomendasi");
+  
+  // PERBAIKAN: Tambahkan if (wadah) untuk memastikan HTML-nya memang ada sebelum diproses
+  if (wadah && event.target !== kotakSearch) {
+    wadah.classList.add("hidden");
+  }
+});

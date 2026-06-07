@@ -9,11 +9,13 @@ async function login() {
     let user = users.find((u) => u.email === email && u.password === password);
 
     if (user) {
+      // Simpan data user ke penyimpanan browser
       sessionStorage.setItem("user", JSON.stringify(user));
       alert("Login berhasil!");
       console.log("berhasil");
       
-      window.location.href = "/src/pages/home.html";
+      // Arahkan ke beranda
+      window.location.href = "/src/pages/Home.html"; 
     } else {
       alert("Email atau password salah!");
     }
@@ -25,10 +27,15 @@ async function login() {
 
 function checkLogin() {
   const user = sessionStorage.getItem("user");
-  const sudahLogin = window.location.pathname.includes("Login.html");
+  // Ngecek apakah saat ini lagi buka halaman login
+  const sedangDiHalamanLogin = window.location.pathname.includes("Login.html");
 
-  if (!user && !sudahLogin) {
+  if (!user && !sedangDiHalamanLogin) {
+    // Kalau belum login DAN BUKAN di halaman login, paksa ke login
     window.location.href = "/src/pages/Login.html";
+  } else if (user && sedangDiHalamanLogin) {
+    // Kalau SUDAH login TAPI malah buka halaman login, langsung lempar ke Home
+    window.location.href = "/src/pages/Home.html";
   }
 }
 
@@ -37,4 +44,6 @@ function logout() {
   window.location.href = "/src/pages/Login.html";
 }
 
+// Jalankan pengecekan setiap kali script dipanggil
 checkLogin();
+
