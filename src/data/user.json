@@ -1,17 +1,28 @@
 [
     {
-        "email": "Haidar@gmail.com",
+        "email": "haidar@gmail.com",
         "password": "12345",
-        "name": "Daii"
-    },
-    {
-        "email": "user@gmail.com",
-        "password": "12345",
-        "name": "User Biasa"
+        "name": "Haidar ganteng",
+        "username": "kilobyte",
+        "phone": "+62 812-3456-7890",
+        "kota": "Jakarta Selatan",
+        "bergabung": "Januari 2024",
+        "foto": "https://i.pinimg.com/webp/736x/79/13/4d/79134d63895695c693e2a6d882419ac7.webp",
+        "totalPesanan": 12,
+        "totalReview": 5,
+        "poinLoyalitas": 1200
     },
     {
         "email": "ersyacantik@gmail.com",
         "password": "12345",
-        "name": "User Biasa"
+        "name": "Ersya cntik istri hedar",
+        "username": "@ersyanadira",
+        "phone": "+62 878-1122-3344",
+        "kota": "Surabaya",
+        "bergabung": "Februari 2025",
+        "foto": "https://api.dicebear.com/9.x/adventurer/svg?seed=Ersya&backgroundColor=c0aede",
+        "totalPesanan": 3,
+        "totalReview": 1,
+        "poinLoyalitas": 300
     }
 ]

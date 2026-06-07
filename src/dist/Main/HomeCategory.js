@@ -122,5 +122,14 @@ async function bestSeller() {
   }
 }
 
+// Menampilkan nama  dan profile dari localstorage
+const dataUser = sessionStorage.getItem("user");
+if (dataUser) {
+  const user = JSON.parse(dataUser);
+  document.getElementById("nama-pengguna").textContent = user.name;
+  document.getElementById("foto-navbar").src = user.foto || "https://api.dicebear.com/9.x/adventurer/svg?seed=default";
+}
+
+
 bestSeller();
 getProducts();
